@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="dariobmibar/src/main/res/drawable/bar0.xml" value="0.156" />
+        <entry key="dariobmibar/src/main/res/drawable/bar1.xml" value="0.156" />
+        <entry key="dariobmibar/src/main/res/drawable/bar2.xml" value="0.156" />
+        <entry key="dariobmibar/src/main/res/drawable/bar3.xml" value="0.156" />
+        <entry key="dariobmibar/src/main/res/drawable/bmi_circle_indicator.xml" value="0.168" />
+        <entry key="dariobmibar/src/main/res/drawable/bmi_circle_indicator_1.xml" value="0.168" />
+        <entry key="dariobmibar/src/main/res/drawable/bmi_circle_indicator_2.xml" value="0.168" />
+        <entry key="dariobmibar/src/main/res/drawable/bmi_circle_indicator_3.xml" value="0.168" />
+        <entry key="dariobmibar/src/main/res/drawable/bmi_dash_line.xml" value="0.165" />
+        <entry key="dariobmibar/src/main/res/drawable/bmi_dashed_divider.xml" value="0.1705" />
+        <entry key="dariobmibar/src/main/res/drawable/bmi_level_lines_v.xml" value="0.1865" />
+        <entry key="dariobmibar/src/main/res/drawable/bmi_selected_indicator.xml" value="0.125" />
+        <entry key="dariobmibar/src/main/res/font-v26/gilroy_font_family.xml" value="0.3453703703703704" />
+        <entry key="dariobmibar/src/main/res/font/gilroy_font_family.xml" value="0.3453703703703704" />
+        <entry key="dariobmibar/src/main/res/layout/dario_bmi_bar.xml" value="0.375" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11 (2)" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
