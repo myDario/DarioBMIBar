@@ -1,6 +1,8 @@
 # DarioBMIBar
 Android BMI Level component
 
+<img src="art/screen0.png" width="200"/>
+
 ## Install Dependency
 If you haven't already, add the jitpack repository to the root `buil.gradle` file.
 
