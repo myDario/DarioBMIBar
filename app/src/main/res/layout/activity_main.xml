@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#EDEDED"
     tools:context=".MainActivity">
 
     <com.labstyle.dariobmibar.DarioBMIBar
+        android:id="@+id/bmiBar"
         android:layout_width="0dp"
         android:layout_height="200dp"
         app:bmi="22.5"
@@ -15,5 +15,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <com.labstyle.dariobmibar.DarioBMISections
+        android:id="@+id/bmiSections"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        app:bmi="22.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bmiBar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

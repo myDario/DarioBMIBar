@@ -17,7 +17,7 @@ allprojects {
 
 Add the dependency:
 ```gradle
-implementation 'com.github.myDario:DarioBMIBar:1.0.0'
+implementation 'com.github.myDario:DarioBMIBar:1.0.1'
 ```
 
 ## Usage
@@ -39,4 +39,24 @@ Change BMI at runtime
 
 ```kotlin
 findViewById<DarioBMIBar>(R.id.bmi).setBMIValue(22.5f)
+```
+
+BMI Bar view with highlighted sections
+
+```xml
+<com.labstyle.dariobmibar.DarioBMISections
+    android:id="@+id/bmiSections"
+    android:layout_width="0dp"
+    android:layout_height="200dp"
+    app:bmi="22.5"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintBottom_toBottomOf="parent"/>
+```
+
+Change BMI at runtime
+
+```kotlin
+findViewById<DarioBMISections>(R.id.bmiSections).setBMIValue(22.5f)
 ```
