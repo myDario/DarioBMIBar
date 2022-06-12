@@ -22,15 +22,22 @@ class DarioBMIBar @JvmOverloads constructor(
     defStyleRes: Int = 0
 ): RelativeLayout(context, attrs, defStyle, defStyleRes) {
     private var bmi = 21f
+    private var unitLabel = "BMI"
 
     init {
         val attributes = context.obtainStyledAttributes(attrs, R.styleable.DarioBMIBar)
         bmi = attributes.getFloat(R.styleable.DarioBMIBar_bmi, bmi)
+        unitLabel = attributes.getString(R.styleable.DarioBMIBar_unitLabel) ?: unitLabel
         attributes.recycle()
 
         inflate(context, R.layout.dario_bmi_bar, this)
 
+        setBMIUnitLabel(unitLabel)
         setBMIValue(bmi)
+    }
+
+    fun setBMIUnitLabel(label: String) {
+        findViewById<TextView>(R.id.bmiValueUnitText)?.text = label
     }
 
     fun setBMIValue(value: Float) {

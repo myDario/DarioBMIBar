@@ -17,7 +17,7 @@ allprojects {
 
 Add the dependency:
 ```gradle
-implementation 'com.github.myDario:DarioBMIBar:1.0.1'
+implementation 'com.github.myDario:DarioBMIBar:1.0.2'
 ```
 
 ## Usage
@@ -29,6 +29,7 @@ Add the view in a layout:
     android:layout_width="0dp"
     android:layout_height="200dp"
     app:bmi="22.5"
+    app:unitLabel="BMI"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintTop_toTopOf="parent"
