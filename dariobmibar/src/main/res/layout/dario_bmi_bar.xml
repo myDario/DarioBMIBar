@@ -119,6 +119,7 @@
             android:layout_height="wrap_content"
             android:text="21"
             style="@style/BMITextValue"
+            android:paddingEnd="2dp"
             app:layout_constraintStart_toStartOf="@+id/selectionLineIndicator"
             app:layout_constraintEnd_toEndOf="@+id/selectionLineIndicator"
             app:layout_constraintBottom_toTopOf="@+id/selectionLineIndicator"/>
@@ -130,6 +131,7 @@
             style="@style/BMITextUnit"
             app:layout_constraintStart_toEndOf="@+id/bmiValueText"
             app:layout_constraintBottom_toBottomOf="@+id/bmiValueText"
+            android:paddingStart="2dp"
             android:layout_marginStart="4dp"
             android:layout_marginBottom="4dp"/>
 

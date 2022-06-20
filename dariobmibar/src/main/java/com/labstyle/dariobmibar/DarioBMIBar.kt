@@ -61,11 +61,70 @@ class DarioBMIBar @JvmOverloads constructor(
             else if (bmi >= 25.0 && bmi < 30.0) 0.265454545f + 0.367272727f + (factor * (bmi - 25f))
             else 0.265454545f + 0.367272727f + 0.236363636f + (factor * (bmi - 30f))
 
-        if (hBias > 1.0f) {
-            hBias = 1.0f
+        // bmi indicator position
+        Log.d("rafff", "hbias $hBias")
+        if (hBias > 0.985f) {
+            hBias = 0.985f
+        }
+        if (hBias < 0.01f) {
+            hBias = 0.01f
         }
 
         constraintSet.setHorizontalBias(R.id.selectionLineIndicator, hBias)
+
+        // bmi text
+        constraintSet.clear(R.id.bmiValueText, ConstraintSet.START)
+        constraintSet.clear(R.id.bmiValueText, ConstraintSet.END)
+        constraintSet.clear(R.id.bmiValueUnitText, ConstraintSet.START)
+        constraintSet.clear(R.id.bmiValueUnitText, ConstraintSet.END)
+
+        if (hBias > 0.85f) {
+            constraintSet.connect(
+                R.id.bmiValueUnitText,
+                ConstraintSet.END,
+                ConstraintSet.PARENT_ID,
+                ConstraintSet.END
+            )
+            constraintSet.connect(
+                R.id.bmiValueText,
+                ConstraintSet.END,
+                R.id.bmiValueUnitText,
+                ConstraintSet.START
+            )
+        } else if (hBias < 0.08f) {
+            constraintSet.connect(
+                R.id.bmiValueText,
+                ConstraintSet.START,
+                ConstraintSet.PARENT_ID,
+                ConstraintSet.START
+            )
+            constraintSet.connect(
+                R.id.bmiValueUnitText,
+                ConstraintSet.START,
+                R.id.bmiValueText,
+                ConstraintSet.END
+            )
+        } else {
+            constraintSet.connect(
+                R.id.bmiValueText,
+                ConstraintSet.START,
+                R.id.selectionLineIndicator,
+                ConstraintSet.START
+            )
+            constraintSet.connect(
+                R.id.bmiValueText,
+                ConstraintSet.END,
+                R.id.selectionLineIndicator,
+                ConstraintSet.END
+            )
+            constraintSet.connect(
+                R.id.bmiValueUnitText,
+                ConstraintSet.START,
+                R.id.bmiValueText,
+                ConstraintSet.END
+            )
+        }
+
         constraintSet.applyTo(parent)
 
         val circleBg =

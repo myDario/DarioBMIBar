@@ -11,7 +11,7 @@
         android:layout_width="0dp"
         android:layout_height="200dp"
         app:bmi="22.5"
-        app:unitLabel="IMC"
+        app:unitLabel="BMI"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
