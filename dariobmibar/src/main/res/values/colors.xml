@@ -10,4 +10,10 @@
     <color name="bmi_section_1">#e1efe6</color>
     <color name="bmi_section_2">#fff2e3</color>
     <color name="bmi_section_3">#fcdada</color>
+
+    <color name="bmi_dot_indicator_1">#F16658</color>
+    <color name="bmi_dot_indicator_2">#07CB79</color>
+    <color name="bmi_dot_indicator_3">#FFCC4D</color>
+    <color name="bmi_dot_indicator_4">#F16658</color>
+    <color name="black">#000000</color>
 </resources>
