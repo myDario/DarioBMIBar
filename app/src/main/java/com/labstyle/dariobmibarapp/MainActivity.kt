@@ -13,6 +13,6 @@ class MainActivity : AppCompatActivity() {
 
         findViewById<DarioBMIBar>(R.id.bmiBar).setBMIValue(28f)
         findViewById<DarioBMISections>(R.id.bmiSections).setBMIValue(30.5f)
-        findViewById<DarioBMIDotIndicator>(R.id.bmiDotIndicator).setBMIValue(21.5f)
+        findViewById<DarioBMIDotIndicator>(R.id.bmiDotIndicator).setBMIValue(10.5f)
     }
 }

@@ -34,14 +34,12 @@ class DarioBMIDotIndicator @JvmOverloads constructor(
     }
 
     fun setBMIUnitLabel(label: String) {
-        findViewById<TextView>(R.id.bmiValueUnitText)?.text = label
+        findViewById<TextView>(R.id.bmiText)?.text = label
     }
 
     fun setBMIValue(value: Float) {
         bmi = value
 
-        findViewById<TextView>(R.id.bmiValueText)?.text =
-            "%.1f".format(Locale.getDefault(), bmi)
 
         val parent = findViewById<ConstraintLayout>(R.id.topBarsLayout)
         val constraintSet = ConstraintSet()
@@ -132,5 +130,8 @@ class DarioBMIDotIndicator @JvmOverloads constructor(
         findViewById<View>(R.id.circleIndicator)?.let { circle ->
             circle.background = ContextCompat.getDrawable(context, circleBg)
         }
+
+
+
     }
 }
