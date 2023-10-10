@@ -14,7 +14,6 @@
             android:background="@drawable/bar0"
             style="@style/BMIDotIndicatorBar"
             android:backgroundTint="@color/bmi_dot_indicator_1"
-
             android:layout_width="0dp"
             android:layout_height="@dimen/bmi_bar_bar_height"
             app:layout_constraintBottom_toTopOf="@+id/textviewBar0"
@@ -43,7 +42,7 @@
             app:layout_constraintBottom_toTopOf="@+id/textviewBar0"
             app:layout_constraintStart_toEndOf="@+id/bar1"
             app:layout_constraintEnd_toStartOf="@+id/bar3"
-            app:layout_constraintHorizontal_weight="23.6363636"/>
+            app:layout_constraintHorizontal_weight="20.6363636"/>
         <View
             android:id="@+id/bar3"
             android:background="@drawable/bar3"
@@ -54,7 +53,7 @@
             app:layout_constraintBottom_toTopOf="@+id/textviewBar0"
             app:layout_constraintStart_toEndOf="@+id/bar2"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_weight="13.0909091"/>
+            app:layout_constraintHorizontal_weight="26.0909091"/>
 
         <ImageView
             android:id="@+id/divider0"
@@ -117,11 +116,14 @@
             app:layout_constraintEnd_toEndOf="@id/bar2PlaceHolder"
             app:layout_constraintBottom_toBottomOf="parent"/>
 
+
+<!--        18.5454545-->
         <ImageView
             android:id="@+id/selectionLineIndicator"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:visibility="invisible"
+            android:visibility="visible"
+            app:layout_constraintHorizontal_bias="0.55774822"
             android:src="@drawable/bmi_selected_indicator"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

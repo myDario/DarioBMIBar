@@ -11,8 +11,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        findViewById<DarioBMIBar>(R.id.bmiBar).setBMIValue(28f)
+        findViewById<DarioBMIBar>(R.id.bmiBar).setBMIValue(0f)
         findViewById<DarioBMISections>(R.id.bmiSections).setBMIValue(30.5f)
-        findViewById<DarioBMIDotIndicator>(R.id.bmiDotIndicator).setBMIValue(10.5f)
+        findViewById<DarioBMIDotIndicator>(R.id.bmiDotIndicator).setBMIValue(17.9f)
     }
 }
+//0.26545453
