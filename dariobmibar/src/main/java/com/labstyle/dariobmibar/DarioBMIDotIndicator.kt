@@ -45,27 +45,7 @@ class DarioBMIDotIndicator @JvmOverloads constructor(
         val constraintSet = ConstraintSet()
         constraintSet.clone(parent)
 
-        val factor =
-            if (bmi < 18.5) 0.165454545f / 18.5f
-            else if (bmi >= 18.5 && bmi < 25.0) 0.305454545f / (25.0f - 18.5f)
-            else if (bmi >= 25.0 && bmi < 30.0) 0.356363636f / (30.0f - 25.0f)
-            else 0.130909091f / (40f - 30f)
-
-       //bmi is  18.4 , hbias is 0.16456018  , factor is 0.008943489
-        //bmi is  18.5 , hbias is 0.20545454  , factor is 0.04699301
-       //bmi is  24.9 , hbias is 0.40774822  , factor is 0.03160839
-        // bmi is  25.0 , hbias is 0.63272727  , factor is 0.06327273
-        // bmi is  29.9 , hbias is 0.9427636  , factor is 0.06327273
-
-
-        var hBias =
-            if (bmi < 18.5) factor * bmi
-            else if (bmi >= 18.5 && bmi < 25.0) 0.205454545f + (factor * (bmi - 18.5f))
-            else if (bmi >= 25.0 && bmi < 30.0)+ 0.307272727f + (factor * (bmi - 25f))
-            else 0.265454545f + 0.367272727f + 0.236363636f + (factor * (bmi - 30f))
-
-        // bmi indicator position
-        Log.d("rafff", "bmi is  $bmi , hbias is $hBias  , factor is $factor")
+        var hBias = calculateHBias(bmi)
         if (hBias > 0.985f) {
             hBias = 0.985f
         }
@@ -139,7 +119,26 @@ class DarioBMIDotIndicator @JvmOverloads constructor(
             circle.background = ContextCompat.getDrawable(context, circleBg)
         }
 
+    }
 
-
+    private fun calculateHBias(bmi: Float): Float {
+        return when {
+            bmi <= 18.5f -> {
+                val factor = (bmi - 18.5f) / (18.5f - 0f)
+                0.01f + factor * (0.12f - 0.01f)
+            }
+            bmi >= 18.5f && bmi < 25.0f -> {
+                val factor = (bmi - 18.5f) / (25.0f - 18.5f)
+                0.16f + factor * (0.49f - 0.16f)
+            }
+            bmi >= 25.0f && bmi < 30.0f -> {
+                val factor = (bmi - 25.0f) / (30.0f - 25.0f)
+                0.54f + factor * (0.71f - 0.54f)
+            }
+            else -> {
+                val factor = (bmi - 30.0f) / (40.0f - 30.0f)
+                0.75f + factor * (0.985f - 0.75f)
+            }
+        }
     }
 }
