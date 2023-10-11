@@ -29,7 +29,6 @@
         android:id="@+id/bmiDotIndicator"
         android:layout_width="0dp"
         android:layout_height="200dp"
-        app:bmi="22.5"
         app:unitLabel="unhealthy"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

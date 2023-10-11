@@ -19,7 +19,7 @@
             app:layout_constraintBottom_toTopOf="@+id/textviewBar0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/bar1"
-            app:layout_constraintHorizontal_weight="26.5454545"
+            app:layout_constraintHorizontal_weight="13.5454545"
             />
         <View
             android:id="@+id/bar1"
@@ -123,7 +123,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:visibility="visible"
-            app:layout_constraintHorizontal_bias="0.55774822"
+            app:layout_constraintHorizontal_bias="0.76"
             android:src="@drawable/bmi_selected_indicator"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

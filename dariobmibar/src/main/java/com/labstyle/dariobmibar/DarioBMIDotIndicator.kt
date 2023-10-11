@@ -30,7 +30,7 @@ class DarioBMIDotIndicator @JvmOverloads constructor(
         inflate(context, R.layout.dario_bmi_dot_indicator, this)
 
         setBMIUnitLabel(unitLabel)
-        setBMIValue(bmi)
+//        setBMIValue(bmi)
     }
 
     fun setBMIUnitLabel(label: String) {
@@ -45,6 +45,7 @@ class DarioBMIDotIndicator @JvmOverloads constructor(
         val constraintSet = ConstraintSet()
         constraintSet.clone(parent)
 
+        println("hbias is  $bmi ==> ${calculateHBias(bmi)}")
         var hBias = calculateHBias(bmi)
         if (hBias > 0.985f) {
             hBias = 0.985f
@@ -56,58 +57,58 @@ class DarioBMIDotIndicator @JvmOverloads constructor(
         constraintSet.setHorizontalBias(R.id.selectionLineIndicator, hBias)
 
         // bmi text
-        constraintSet.clear(R.id.bmiValueText, ConstraintSet.START)
-        constraintSet.clear(R.id.bmiValueText, ConstraintSet.END)
-        constraintSet.clear(R.id.bmiValueUnitText, ConstraintSet.START)
-        constraintSet.clear(R.id.bmiValueUnitText, ConstraintSet.END)
-
-        if (hBias > 0.85f) {
-            constraintSet.connect(
-                R.id.bmiValueUnitText,
-                ConstraintSet.END,
-                ConstraintSet.PARENT_ID,
-                ConstraintSet.END
-            )
-            constraintSet.connect(
-                R.id.bmiValueText,
-                ConstraintSet.END,
-                R.id.bmiValueUnitText,
-                ConstraintSet.START
-            )
-        } else if (hBias < 0.08f) {
-            constraintSet.connect(
-                R.id.bmiValueText,
-                ConstraintSet.START,
-                ConstraintSet.PARENT_ID,
-                ConstraintSet.START
-            )
-            constraintSet.connect(
-                R.id.bmiValueUnitText,
-                ConstraintSet.START,
-                R.id.bmiValueText,
-                ConstraintSet.END
-            )
-        } else {
-            constraintSet.connect(
-                R.id.bmiValueText,
-                ConstraintSet.START,
-                R.id.selectionLineIndicator,
-                ConstraintSet.START
-            )
-            constraintSet.connect(
-                R.id.bmiValueText,
-                ConstraintSet.END,
-                R.id.selectionLineIndicator,
-                ConstraintSet.END
-            )
-            constraintSet.connect(
-                R.id.bmiValueUnitText,
-                ConstraintSet.START,
-                R.id.bmiValueText,
-                ConstraintSet.END
-            )
-        }
-
+//        constraintSet.clear(R.id.bmiValueText, ConstraintSet.START)
+//        constraintSet.clear(R.id.bmiValueText, ConstraintSet.END)
+//        constraintSet.clear(R.id.bmiValueUnitText, ConstraintSet.START)
+//        constraintSet.clear(R.id.bmiValueUnitText, ConstraintSet.END)
+//
+//        if (hBias > 0.85f) {
+//            constraintSet.connect(
+//                R.id.bmiValueUnitText,
+//                ConstraintSet.END,
+//                ConstraintSet.PARENT_ID,
+//                ConstraintSet.END
+//            )
+//            constraintSet.connect(
+//                R.id.bmiValueText,
+//                ConstraintSet.END,
+//                R.id.bmiValueUnitText,
+//                ConstraintSet.START
+//            )
+//        } else if (hBias < 0.08f) {
+//            constraintSet.connect(
+//                R.id.bmiValueText,
+//                ConstraintSet.START,
+//                ConstraintSet.PARENT_ID,
+//                ConstraintSet.START
+//            )
+//            constraintSet.connect(
+//                R.id.bmiValueUnitText,
+//                ConstraintSet.START,
+//                R.id.bmiValueText,
+//                ConstraintSet.END
+//            )
+//        } else {
+//            constraintSet.connect(
+//                R.id.bmiValueText,
+//                ConstraintSet.START,
+//                R.id.selectionLineIndicator,
+//                ConstraintSet.START
+//            )
+//            constraintSet.connect(
+//                R.id.bmiValueText,
+//                ConstraintSet.END,
+//                R.id.selectionLineIndicator,
+//                ConstraintSet.END
+//            )
+//            constraintSet.connect(
+//                R.id.bmiValueUnitText,
+//                ConstraintSet.START,
+//                R.id.bmiValueText,
+//                ConstraintSet.END
+//            )
+//        }
+//
         constraintSet.applyTo(parent)
 
         val circleBg =
@@ -123,13 +124,13 @@ class DarioBMIDotIndicator @JvmOverloads constructor(
 
     private fun calculateHBias(bmi: Float): Float {
         return when {
-            bmi <= 18.5f -> {
-                val factor = (bmi - 18.5f) / (18.5f - 0f)
+            bmi < 18.5f -> {
+                val factor = bmi / 18.5f
                 0.01f + factor * (0.12f - 0.01f)
             }
             bmi >= 18.5f && bmi < 25.0f -> {
                 val factor = (bmi - 18.5f) / (25.0f - 18.5f)
-                0.16f + factor * (0.49f - 0.16f)
+                0.17f + factor * (0.50f - 0.17f)
             }
             bmi >= 25.0f && bmi < 30.0f -> {
                 val factor = (bmi - 25.0f) / (30.0f - 25.0f)
@@ -137,7 +138,7 @@ class DarioBMIDotIndicator @JvmOverloads constructor(
             }
             else -> {
                 val factor = (bmi - 30.0f) / (40.0f - 30.0f)
-                0.75f + factor * (0.985f - 0.75f)
+                0.76f + factor * (0.985f - 0.76f)
             }
         }
     }
