@@ -62,7 +62,7 @@ class DarioBMIDotIndicator @JvmOverloads constructor(
             constraintSet.connect(
                 R.id.bmiText,
                 ConstraintSet.END,
-                R.id.circleIndicator,
+                R.id.selectionLineIndicator,
                 ConstraintSet.START
             )
         } else if (hBias < 0.08f) {
@@ -70,7 +70,7 @@ class DarioBMIDotIndicator @JvmOverloads constructor(
             constraintSet.connect(
                 R.id.bmiText,
                 ConstraintSet.START,
-                R.id.circleIndicator,
+                R.id.selectionLineIndicator,
                 ConstraintSet.END
             )
         } else {
