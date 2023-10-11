@@ -30,7 +30,7 @@ class DarioBMIDotIndicator @JvmOverloads constructor(
         inflate(context, R.layout.dario_bmi_dot_indicator, this)
 
         setBMIUnitLabel(unitLabel)
-//        setBMIValue(bmi)
+        setBMIValue(bmi)
     }
 
     fun setBMIUnitLabel(label: String) {
