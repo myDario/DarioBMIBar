@@ -3,6 +3,7 @@ package com.labstyle.dariobmibarapp
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.labstyle.dariobmibar.DarioBMIBar
+import com.labstyle.dariobmibar.DarioBMIDotIndicator
 import com.labstyle.dariobmibar.DarioBMISections
 
 class MainActivity : AppCompatActivity() {
@@ -10,7 +11,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        findViewById<DarioBMIBar>(R.id.bmiBar).setBMIValue(38f)
-        findViewById<DarioBMISections>(R.id.bmiSections).setBMIValue(22.5f)
+        findViewById<DarioBMIBar>(R.id.bmiBar).setBMIValue(0f)
+        findViewById<DarioBMISections>(R.id.bmiSections).setBMIValue(30.5f)
+        findViewById<DarioBMIDotIndicator>(R.id.bmiDotIndicator).setBMIValue(38f)
     }
 }

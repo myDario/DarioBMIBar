@@ -61,3 +61,22 @@ Change BMI at runtime
 ```kotlin
 findViewById<DarioBMISections>(R.id.bmiSections).setBMIValue(22.5f)
 ```
+
+BMI Bar view with highlighted sections
+
+```xml
+<com.labstyle.dariobmibar.DarioBMIDotIndicator
+    android:id="@+id/bmiDotIndicator"
+    android:layout_width="0dp"
+    android:layout_height="200dp"
+    app:bmi="22.5"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/bmiSections" />
+```
+
+Change BMI at runtime
+
+```kotlin
+findViewById<DarioBMIDotIndicator>(R.id.bmiDotIndicator).setBMIValue(21.5f)
+```

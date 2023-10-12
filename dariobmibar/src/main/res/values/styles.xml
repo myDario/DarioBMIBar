@@ -5,6 +5,12 @@
         <item name="android:layout_marginEnd">@dimen/bmi_bar_bar_padding</item>
         <item name="android:layout_marginBottom">2dp</item>
     </style>
+
+    <style name="BMIDotIndicatorBar">
+        <item name="android:layout_marginStart">@dimen/bmi_bar_dot_indicator_padding</item>
+        <item name="android:layout_marginEnd">@dimen/bmi_bar_dot_indicator_padding</item>
+        <item name="android:layout_marginBottom">2dp</item>
+    </style>
     <style name="BMITextBar">
         <item name="android:fontFamily">@font/gilroy_medium</item>
         <item name="android:textSize">14dp</item>
