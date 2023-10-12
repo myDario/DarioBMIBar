@@ -136,7 +136,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="Healthy"
-            android:textSize="14sp"
+            android:textSize="12sp"
             android:fontFamily="@font/gilroy_semibold"
             android:textColor="@color/grey"
             app:layout_constraintEnd_toEndOf="@+id/circleIndicator"
